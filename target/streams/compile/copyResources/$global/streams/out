@@ -1,0 +1,8 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/logback.xml,/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/target/scala-2.13/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/messages,/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/target/scala-2.13/classes/messages)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/application.conf,/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/target/scala-2.13/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/evolutions,/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/target/scala-2.13/classes/evolutions)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/evolutions/default,/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/target/scala-2.13/classes/evolutions/default)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/evolutions/default/1.sql,/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/target/scala-2.13/classes/evolutions/default/1.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/routes,/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/target/scala-2.13/classes/routes)[0m

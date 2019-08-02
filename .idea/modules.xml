@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play-scala-slick-example.iml" filepath="$PROJECT_DIR$/.idea/modules/play-scala-slick-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play-scala-slick-example-build.iml" filepath="$PROJECT_DIR$/.idea/modules/play-scala-slick-example-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/play_curd_akka.iml" filepath="$PROJECT_DIR$/play_curd_akka.iml" />
+    </modules>
+  </component>
+</project>
