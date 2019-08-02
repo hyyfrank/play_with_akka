@@ -1,10 +1,10 @@
-2019-08-02 22:39:08,207 [WARN] from slick.basic.DatabaseConfig in play-dev-mode-akka.actor.default-dispatcher-2 - Use `profile` instead of `driver`. The latter is deprecated since Slick 3.2 and will be removed.
-2019-08-02 22:39:08,798 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-08-02 23:03:17,140 [WARN] from slick.basic.DatabaseConfig in play-dev-mode-akka.actor.default-dispatcher-2 - Use `profile` instead of `driver`. The latter is deprecated since Slick 3.2 and will be removed.
+2019-08-02 23:03:17,723 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.cors.CORSFilter
 
-2019-08-02 22:39:08,806 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev) (no global state)
-2019-08-02 22:40:46,303 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
+2019-08-02 23:03:17,732 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev) (no global state)
+2019-08-02 23:05:21,679 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
