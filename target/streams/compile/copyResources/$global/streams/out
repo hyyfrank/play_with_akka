@@ -1,8 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/huangfr/github/play_with_akka/conf/logback.xml,/Users/huangfr/github/play_with_akka/target/scala-2.13/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/huangfr/github/play_with_akka/conf/messages,/Users/huangfr/github/play_with_akka/target/scala-2.13/classes/messages)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/huangfr/github/play_with_akka/conf/application.conf,/Users/huangfr/github/play_with_akka/target/scala-2.13/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/huangfr/github/play_with_akka/conf/evolutions,/Users/huangfr/github/play_with_akka/target/scala-2.13/classes/evolutions)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/huangfr/github/play_with_akka/conf/evolutions/default,/Users/huangfr/github/play_with_akka/target/scala-2.13/classes/evolutions/default)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/huangfr/github/play_with_akka/conf/evolutions/default/1.sql,/Users/huangfr/github/play_with_akka/target/scala-2.13/classes/evolutions/default/1.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/huangfr/github/play_with_akka/conf/routes,/Users/huangfr/github/play_with_akka/target/scala-2.13/classes/routes)[0m
