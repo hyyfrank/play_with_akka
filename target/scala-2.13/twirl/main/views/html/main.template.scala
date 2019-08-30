@@ -51,8 +51,8 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-08-02T22:34:35.426631
-                  SOURCE: /Users/hyy/github/play_akka_mysql_demo/play_curd_akka/app/views/main.scala.html
+                  DATE: 2019-08-30T17:41:02.877
+                  SOURCE: /Users/huangfr/github/play_with_akka/app/views/main.scala.html
                   HASH: 3ba878406d2303e78c7bc95b486136d1c7371770
                   MATRIX: 733->1|857->32|884->33|961->84|986->89|1079->156|1093->162|1153->201|1216->237|1244->244|1276->249
                   LINES: 21->1|26->2|27->3|31->7|31->7|32->8|32->8|32->8|35->11|35->11|36->12

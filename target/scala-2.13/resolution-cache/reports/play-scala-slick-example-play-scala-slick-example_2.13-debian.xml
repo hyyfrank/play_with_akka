@@ -7,7 +7,7 @@
 		revision="2.7.x"
 		conf="debian"
 		confs="compile, runtime, test, provided, optional, web-assets, web-assets-test, web-plugin, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20190802223434"/>
+		date="20190830174102"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

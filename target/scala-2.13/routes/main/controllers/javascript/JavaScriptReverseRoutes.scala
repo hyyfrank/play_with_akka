@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/routes
-// @DATE:Fri Aug 02 22:34:35 CST 2019
+// @SOURCE:/Users/huangfr/github/play_with_akka/conf/routes
+// @DATE:Fri Aug 30 17:41:02 CST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -9,6 +9,36 @@ import _root_.controllers.Assets.Asset
 
 // @LINE:6
 package controllers.javascript {
+
+  // @LINE:10
+  class ReverseRestController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:10
+    def getPersons: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RestController.getPersons",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rest"})
+        }
+      """
+    )
+  
+    // @LINE:11
+    def getCertainPerson: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RestController.getCertainPerson",
+      """
+        function(name0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rest/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0))})
+        }
+      """
+    )
+  
+  }
 
   // @LINE:6
   class ReversePersonController(_prefix: => String) {
@@ -50,7 +80,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:11
+  // @LINE:14
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -58,7 +88,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:11
+    // @LINE:14
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

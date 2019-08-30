@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/hyy/github/play_akka_mysql_demo/play_curd_akka/conf/routes
-// @DATE:Fri Aug 02 22:34:35 CST 2019
+// @SOURCE:/Users/huangfr/github/play_with_akka/conf/routes
+// @DATE:Fri Aug 30 17:41:02 CST 2019
 
 
 package router {
