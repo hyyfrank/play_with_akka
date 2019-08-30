@@ -19,6 +19,13 @@ class RestController @Inject()(ps:PeopleService,cc: MessagesControllerComponents
    * 获取所有person列表
    * @return
    */
+  def getPersons() = Action.async {
+    implicit request =>{
+      ps.getAllPerson().map{
+        persons=>Ok(Json.toJson(persons))
+      }
+    }
+  }
   def getCertainPerson(name: String) = Action.async {
     implicit request =>{
       ps.getCertainPerson(name).map{
