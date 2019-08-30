@@ -23,6 +23,13 @@ class PeopleService @Inject()(repo: PersonRepository){
     def getCertainPerson(name: String) = {
       repo.queryByName(name)
     }
+
+  /**
+   * 创建一个person
+   */
+  def creatPerson(name:String, age:Int) = {
+    repo.create(name,age)
+  }
 }
 
 

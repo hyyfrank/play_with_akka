@@ -26,12 +26,21 @@ class RestController @Inject()(ps:PeopleService,cc: MessagesControllerComponents
       }
     }
   }
-  def getCertainPerson(name: String) = Action.async {
+  def getPersonByName(name: String) = Action.async {
     implicit request =>{
       ps.getCertainPerson(name).map{
         oneperson => Ok(Json.toJson(oneperson))
       }
     }
+  }
+  def addPerson() = Action.async {
+    implicit request=>{
+      val json = request.body.asJson
+      println(json.toString)
+      ps.creatPerson("jelly",21).map{
+        _ => Ok("create successful")
+      }
+     }
   }
 
 

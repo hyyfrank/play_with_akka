@@ -7,8 +7,8 @@ GET     /                           controllers.PersonController.index
 POST    /person                     controllers.PersonController.addPerson
 GET     /persons                    controllers.PersonController.getPersons
 # Restful Service API For Singel CRUD
-GET     /rest/all                       controllers.RestController.getPersons
-GET     /rest/:name                 controllers.RestController.getCertainPerson(name:String)
-
+GET     /rest/all                   controllers.RestController.getPersons
+GET     /rest/:name                 controllers.RestController.getPersonByName(name:String)
+POST     /rest/add                   controllers.RestController.addPerson
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
