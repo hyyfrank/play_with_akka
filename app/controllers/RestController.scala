@@ -10,11 +10,15 @@ import play.api.i18n._
 import play.api.libs.json.Json
 import play.api.mvc._
 
+import dal._
+import controllers._
+import edu.fudan.www.basic._
+
 import scala.concurrent.{ExecutionContext, Future}
 
-class RestController @Inject()(ps:PeopleService,cc: MessagesControllerComponents)
-                              (implicit ec: ExecutionContext)
-  extends MessagesAbstractController(cc) {
+class RestController (cc: RestController, ds: DataSource) extends AbstractController(cc)
+{
+  val ps: PersonRepository = ds.personRepository
   /**
    * 获取所有person列表
    * @return
