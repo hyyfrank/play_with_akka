@@ -1,4 +1,4 @@
-package business
+package services
 import javax.inject._
 import play.api.libs.json.Json
 import scala.concurrent.{ExecutionContext, Future}
