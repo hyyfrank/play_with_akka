@@ -1,11 +1,11 @@
-package dal
+package com.autodesk.www.dal
 
 import javax.inject.{ Inject, Singleton }
 import play.api.db.slick.DatabaseConfigProvider
 import slick.basic.DatabaseConfig
 import slick.jdbc._
 
-import models._
+import com.autodesk.www.models._
 
 import scala.concurrent.{ Future, ExecutionContext }
 

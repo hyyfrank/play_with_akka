@@ -1,8 +1,8 @@
-package controllers
+package com.autodesk.www.controllers
 
 import javax.inject._
 
-import services.PeopleService
+import com.autodesk.www.services.PeopleService
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.data.validation.Constraints._

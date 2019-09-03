@@ -1,8 +1,8 @@
-package services
+package com.autodesk.www.services
 import javax.inject._
 import play.api.libs.json.Json
 import scala.concurrent.{ExecutionContext, Future}
-import dal._
+import com.autodesk.www.dal._
 
 /**
  * 所有业务逻辑和查询结果的组合都在service层处理
