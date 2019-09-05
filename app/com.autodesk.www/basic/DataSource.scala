@@ -1,14 +1,11 @@
-package edu.fudan.www.basic
+package com.autodesk.www.basic
 
 import java.util.concurrent.ForkJoinPool
-
-import dal._
-import model.Device
 import slick.basic.DatabaseConfig
 import slick.jdbc.JdbcProfile
-
-import scala.collection.immutable.Iterable
 import scala.concurrent.{ExecutionContext, Future}
+
+import com.autodesk.www.dal._
 
 trait DataSource {
   def personRepository: PersonRepository

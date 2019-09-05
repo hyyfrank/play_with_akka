@@ -1,4 +1,4 @@
-package models
+package com.autodesk.www.models
 
 import play.api.libs.json._
 

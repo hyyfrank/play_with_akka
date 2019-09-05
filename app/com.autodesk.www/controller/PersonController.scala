@@ -1,24 +1,18 @@
-package controllers
+package com.autodesk.www.controller
 
 import javax.inject._
-
-import business.PeopleService
+import com.autodesk.www.services.PeopleService
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 import play.api.i18n._
 import play.api.libs.json.Json
 import play.api.mvc._
-
-import dal._
-import controllers._
-import edu.fudan.www.basic._
-
 import scala.concurrent.{ExecutionContext, Future}
 
-class RestController (cc: RestController, ds: DataSource) extends AbstractController(cc)
-{
-  val ps: PersonRepository = ds.personRepository
+class RestController @Inject()(ps:PeopleService,cc: MessagesControllerComponents)
+                              (implicit ec: ExecutionContext)
+  extends MessagesAbstractController(cc) {
   /**
    * 获取所有person列表
    * @return
@@ -44,7 +38,7 @@ class RestController (cc: RestController, ds: DataSource) extends AbstractContro
       ps.creatPerson("jelly",21).map{
         _ => Ok("create successful")
       }
-     }
+    }
   }
 
 

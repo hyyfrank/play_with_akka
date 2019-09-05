@@ -1,4 +1,4 @@
-package edu.fudan.www
+package com.autodesk.www
 
 
 import play.api.ApplicationLoader.Context
@@ -11,11 +11,11 @@ import router.Routes
 import slick.basic.DatabaseConfig
 import slick.jdbc.JdbcProfile
 
-import controllers._
-import dal._
-import edu.fudan.www.basic.DataSource
-import edu.fudan.www.basic.DataSourceJdbc
-import business._
+import com.autodesk.www.controller._
+import com.autodesk.www.dal._
+import com.autodesk.www.basic.DataSource
+import com.autodesk.www.basic.DataSourceJdbc
+import com.autodesk.www.services._
 
 
 
@@ -40,6 +40,7 @@ class BootComponents(context: Context)
   // TODO put this into config
   private[this] val dbPoolSize = 10
   private[this] lazy val dataSource: DataSource = new DataSourceJdbc(dbConfig, dbPoolSize)
-  private[this] lazy val restController: RestController = new RestController(PersonRepository, dataSource)
-  override lazy val router: Routes = new Routes(httpErrorHandler, RestController, assets)
+//  lazy val applicationController = new
+//  private[this] lazy val restController: RestController = new RestController(PersonRepository, dataSource)
+//  override lazy val router: Routes = new Routes(httpErrorHandler, RestController, assets)
 }
