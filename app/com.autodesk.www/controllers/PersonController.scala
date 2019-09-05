@@ -1,11 +1,7 @@
-package com.autodesk.www.controller
+package com.autodesk.www.controllers
 
 import javax.inject._
 import com.autodesk.www.services.PeopleService
-import play.api.data.Form
-import play.api.data.Forms._
-import play.api.data.validation.Constraints._
-import play.api.i18n._
 import play.api.libs.json.Json
 import play.api.mvc._
 import scala.concurrent.{ExecutionContext, Future}
