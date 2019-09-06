@@ -1,20 +1,12 @@
 package com.autodesk.www.controllers
 
-import javax.inject._
-
 import com.autodesk.www.services.PeopleService
-import play.api.data.Form
-import play.api.data.Forms._
-import play.api.data.validation.Constraints._
-import play.api.i18n._
 import play.api.libs.json.Json
 import play.api.mvc._
-
 import scala.concurrent.{ExecutionContext, Future}
 
-class PersonController @Inject()(ps:PeopleService, cc: MessagesControllerComponents)
-                                (implicit ec: ExecutionContext)
-  extends MessagesAbstractController(cc) {
+class PersonController (ps:PeopleService, cc:ControllerComponents)(implicit ec: ExecutionContext)
+  extends AbstractController(cc) {
   /**
    * 获取所有person列表
    * @return
@@ -32,15 +24,6 @@ class PersonController @Inject()(ps:PeopleService, cc: MessagesControllerCompone
         oneperson => Ok(Json.toJson(oneperson))
       }
     }
-  }
-  def addPerson() = Action.async {
-    implicit request=>{
-      val json = request.body.asJson
-      println(json.toString)
-      ps.creatPerson("jelly",21).map{
-        _ => Ok("create successful")
-      }
-     }
   }
 
 

@@ -8,7 +8,7 @@ import com.autodesk.www.dal._
  * 所有业务逻辑和查询结果的组合都在service层处理
  * @param repo
  */
-class PeopleService @Inject()(repo: PersonRepository){
+class PeopleService (repo: PersonRepository){
   /**
    * 返回所有列表
    * @return

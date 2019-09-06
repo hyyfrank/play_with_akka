@@ -5,6 +5,5 @@
 # Restful Service API For Singel CRUD
 GET     /rest/all                   com.autodesk.www.controllers.PersonController.getPersons
 GET     /rest/:name                 com.autodesk.www.controllers.PersonController.getPersonByName(name:String)
-POST     /rest/add                  com.autodesk.www.controllers.PersonController.addPerson
 # Map static resources from the /public folder to the /assets URL path
 #GET     /assets/*file               com.autodesk.www.controllers.Assets.versioned(path="/public", file: Asset)
