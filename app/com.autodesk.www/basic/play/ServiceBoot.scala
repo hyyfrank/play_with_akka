@@ -25,7 +25,7 @@ class ServiceBoot(context: ApplicationLoader.Context) extends BuiltInComponentsF
   // add logger
   lazy val bootLogger = LoggerFactory.getLogger("com.autodesk.www")
   // add custom error handling
-  override lazy val httpErrorHandler: HttpErrorHandler = new ErrorHandling(context.environment, context.initialConfiguration, context.sourceMapper, Some(router))
+  override lazy val httpErrorHandler: HttpErrorHandler = new ErrorHandling(context.environment, context.initialConfiguration, devContext.map(_.sourceMapper), Some(router))
 
   // add singlton db
   implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
