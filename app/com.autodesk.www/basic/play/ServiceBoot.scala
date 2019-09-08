@@ -3,7 +3,7 @@ package com.autodesk.www.basic.play
 import com.autodesk.www.basic.error.ErrorHandling
 import com.autodesk.www.controllers._
 import com.autodesk.www.dal.PersonRepository
-import com.autodesk.www.filters.BaseFilter
+import com.autodesk.www.basic.CusFilter._
 import com.autodesk.www.services.PeopleService
 import com.typesafe.config.ConfigValueFactory
 import org.slf4j.LoggerFactory
@@ -15,6 +15,7 @@ import play.api.mvc.EssentialFilter
 import play.api.routing.Router
 import play.api.{ApplicationLoader, BuiltInComponentsFromContext, OptionalSourceMapper}
 import play.filters.HttpFiltersComponents
+import play.filters.cors.CORSFilter
 import play.filters.gzip.GzipFilter
 import router.Routes
 import slick.basic.DatabaseConfig
@@ -26,18 +27,17 @@ import play.filters.cors.CORSComponents
   with SlickComponents
   with EvolutionsComponents
   with SlickEvolutionsComponents
+  with CORSComponents
   with HttpFiltersComponents {
-  // add logger
+    implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
+
+    // add logger
   lazy val bootLogger = LoggerFactory.getLogger("com.autodesk.www")
   // add custom error handling
   override lazy val httpErrorHandler: HttpErrorHandler = new ErrorHandling(context.environment, context.initialConfiguration, devContext.map(_.sourceMapper), Some(router))
   // add custom filter
-  val firstFilter:BaseFilter = new BaseFilter()
-  override def httpFilters: Seq[EssentialFilter] = Seq(
-    firstFilter
-  )
+  override def httpFilters: Seq[EssentialFilter] =  Seq(corsFilter)
   // add singlton db
-  implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
   val dbEncyptConfig = slickApi.dbConfig[JdbcProfile](DbName("playdb"))
   val writerConfig = try {
     val decryptedConfig = dbEncyptConfig.config.

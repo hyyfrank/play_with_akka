@@ -11,9 +11,7 @@ import scala.concurrent.{ Future, ExecutionContext }
 
 /**
  * A repository for people.
- *
- * @param dbConfigProvider The Play db config provider. Play will inject this for you.
- */
+*/
 @Singleton
 class PersonRepository @Inject() (dbConfig: DatabaseConfig[JdbcProfile])(implicit ec: ExecutionContext) {
   // We want the JdbcProfile for this provider
