@@ -1,6 +1,7 @@
 package com.autodesk.www.basic.play
 
 import com.autodesk.www.basic.error.ErrorHandling
+import com.autodesk.www.basic.filter.LoggingFilter
 import com.autodesk.www.controllers._
 import com.autodesk.www.dal.PersonRepository
 import com.autodesk.www.services.PeopleService
@@ -17,11 +18,17 @@ import router.Routes
 import slick.basic.DatabaseConfig
 import slick.jdbc.JdbcProfile
 import javax.inject.Provider
+import play.filters.cors.CORSConfig.Origins
+import play.filters.cors.{CORSComponents, CORSConfig, CORSFilter}
+import play.filters.gzip.GzipFilter
+
+import scala.concurrent.duration.Duration
 
 class ServiceBoot(context: ApplicationLoader.Context) extends BuiltInComponentsFromContext(context)
   with SlickComponents
   with EvolutionsComponents
-  with SlickEvolutionsComponents{
+  with SlickEvolutionsComponents
+  with CORSComponents {
   // add logger
   lazy val bootLogger = LoggerFactory.getLogger("com.autodesk.www")
   // add custom error handling
@@ -37,7 +44,7 @@ class ServiceBoot(context: ApplicationLoader.Context) extends BuiltInComponentsF
     DatabaseConfig.forConfig[JdbcProfile]("", decryptedConfig)
   } catch {
     case e: Throwable => {
-      bootLogger.warn("DBConfig Encrypt error ", e)
+      bootLogger.warn("DBConfig error ", e)
       dbEncyptConfig
     }
   }
@@ -47,6 +54,13 @@ class ServiceBoot(context: ApplicationLoader.Context) extends BuiltInComponentsF
   lazy val personController = new PersonController(ps,controllerComponents)
   lazy val router: Router = new Routes(httpErrorHandler, personController)
   // add default implementataion of parent class.
-  override def httpFilters: Seq[EssentialFilter] = Nil
+  //add customize filter, in this place, you can customize you config of your filter, default this will go to
+  val loggingFilter = new LoggingFilter()
+  val gzipFilter = new GzipFilter(
+    shouldGzip = (request, response) => response.body.contentType.exists(_.startsWith("application/json")),
+    bufferSize = 8192,
+    chunkedThreshold = 102400
+  )//customize setting set in serviceboot.scala.
+  override def httpFilters: Seq[EssentialFilter] = Seq(corsFilter,gzipFilter,loggingFilter)
   println("start....successful...")
 }
