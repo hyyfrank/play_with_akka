@@ -17,8 +17,6 @@ import play.api.{ApplicationLoader, BuiltInComponentsFromContext, OptionalSource
 import router.Routes
 import slick.basic.DatabaseConfig
 import slick.jdbc.JdbcProfile
-import javax.inject.Provider
-import play.filters.cors.CORSConfig.Origins
 import play.filters.cors.{CORSComponents, CORSConfig, CORSFilter}
 import play.filters.gzip.GzipFilter
 
